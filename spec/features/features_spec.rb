@@ -1,3 +1,4 @@
+require './app'
 feature 'homepage' do
   it 'shows "Testing infrastructure working!"' do
     visit '/'
