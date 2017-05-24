@@ -7,8 +7,14 @@ class Battle < Sinatra::Base
 
   Capybara.app = Battle
 
+
   get '/' do
-    "Testing infrastructure working!"
+    erb(:index)
+  end
+
+  post '/names' do
+    @name = params[:name]
+    erb(:play)
   end
 
 end

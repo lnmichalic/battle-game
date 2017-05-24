@@ -1,7 +1,9 @@
 require './app'
-feature 'homepage' do
-  it 'shows "Testing infrastructure working!"' do
+feature 'add_players' do
+  it 'allows you to add players' do
     visit '/'
-    expect(page).to have_content 'Testing infrastructure working!'
+    fill_in('name', with: 'John')
+    click_button('Add player')
+    expect(page).to have_content('John')
   end
 end
