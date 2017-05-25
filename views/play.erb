@@ -1,17 +1,10 @@
-<link rel="stylesheet" href="css/style.css">
-<div class="container">
-  <h1>Battle Bots</h1>
-  <h2><%= @player1 %> vs <%= @player2 %></h2>
-  <div id="player1">
-    <p><%= @player1 %></p>
-    <span id="player1-hp">60 / 60 HP</span>
-  </div>
-  <div id="player2">
-    <p><%= @player2 %></p>
-    <span id="player2-hp">60 / 60 HP</span>
-  </div>
-  <form action="/attack" method="get">
-    <input type="submit" value="Attack">
-  </form>
 
-</div>
+  <h1>Battle Bots</h1>
+  <h2><%= @player1.name %> vs <%= @player2.name %></h2>
+    <p><%= @player1.name %></p>
+    <%= @player1.hp %> / 60 HP
+    <p><%= @player2.name %></p>
+    <%= @player2.hp %> / 60 HP
+    <form action="/attack" method="get">
+      <input type="submit" value="Attack">
+    </form>
