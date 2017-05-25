@@ -1,10 +1,10 @@
 
   <h1>Battle Bots</h1>
-  <h2><%= @player1.name %> vs <%= @player2.name %></h2>
-    <p><%= @player1.name %></p>
-    <%= @player1.hp %> / 60 HP
-    <p><%= @player2.name %></p>
-    <%= @player2.hp %> / 60 HP
+  <h2><%= @game.player1.name %> vs <%= @game.player2.name %></h2>
+    <p><%= @game.player1.name %></p>
+    <%= @game.player1.hp %> / 60 HP
+    <p><%= @game.player2.name %></p>
+    <%= @game.player2.hp %> / 60 HP
     <form action="/attack" method="get">
       <input type="submit" value="Attack">
     </form>

@@ -11,9 +11,9 @@ class Player
     @hp = hp
   end
 
-  def attack(target)
-    target.get_damaged
-  end
+  # def attack(target)
+  #   target.get_damaged
+  # end
 
   def get_damaged
     @hp -= 10

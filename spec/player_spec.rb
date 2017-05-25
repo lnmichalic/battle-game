@@ -17,13 +17,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it "attacks the opponent" do
-      expect(lubos).to receive(:get_damaged)
-      jade.attack(lubos)
-    end
-  end
-
   describe '#get_damaged' do
     it "should deduct 10 points from HP" do
       expect {lubos.get_damaged}.to change {lubos.hp}.by(-10)
