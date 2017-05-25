@@ -1,6 +1,13 @@
-RACK_ENV = "test"
+ENV['RACK_ENV'] = 'test'
 
+
+require_relative '../app.rb'
+require 'capybara'
+require 'rspec'
+require 'features/web_helpers'
 require 'capybara/rspec'
+
+Capybara.app = Battle
 
 RSpec.configure do |config|
 
