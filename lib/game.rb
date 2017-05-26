@@ -29,4 +29,8 @@ class Game
       @defending_player = player2
     end
   end
+
+  def active?
+    player1.hp != 0 && player2.hp !=0
+  end
 end

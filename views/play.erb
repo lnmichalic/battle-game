@@ -3,9 +3,17 @@
   <h2><%= @game.player1.name %> vs <%= @game.player2.name %></h2>
     <p><%= @game.player1.name %></p>
     <%= @game.player1.hp %> / 60 HP
+    <% if @game.player1.hp == 0 %>
+    <p>Gameover, <%= @game.player1.name %> lost the battle</p>
+    <% end %>
     <p><%= @game.player2.name %></p>
     <%= @game.player2.hp %> / 60 HP
+    <% if @game.player2.hp == 0 %>
+    <p>Gameover, <%= @game.player2.name %> lost the battle</p>
+    <% end %>
+    <% if @game.active? %>
     <p><%= @game.attacking_player.name %>'s Turn</p>
     <form action="/attack" method="get">
       <input type="submit" value="Attack">
     </form>
+    <% end %>
