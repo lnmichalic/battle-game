@@ -1,5 +1,3 @@
-
-  <h1>Battle Bots</h1>
   <h2><%= @game.player1.name %> vs <%= @game.player2.name %></h2>
     <p><%= @game.player1.name %></p>
     <%= @game.player1.hp %> / 60 HP
@@ -13,7 +11,5 @@
     <% end %>
     <% if @game.active? %>
     <p><%= @game.attacking_player.name %>'s Turn</p>
-    <form action="/attack" method="get">
-      <input type="submit" value="Attack">
-    </form>
+    <a href="/attack" class="btn btn-danger btn-lg" role="button">Attack</a>
     <% end %>

@@ -1,7 +1,10 @@
+<img class="logo" src="img/logo.png" alt="logo">
 <form action="/names" method="POST">
-  Player 1: <br>
-  <input type="text" name="player1" value="Player 1 name here"><br>
-  Player 2: <br>
-  <input type="text" name="player2" value="Player 2 name here"><br>
-  <input type="submit" value="Add players">
+  <div class="form-group">
+  <label for="player1">Player 1</label>
+  <input type="text" class="form-control" name="player1" placeholder="Name">
+  <label for="player2">Player 2</label>
+  <input type="text" class="form-control" name="player2" placeholder="Name"><br>
+  <button type="submit" class="btn btn-default">Add Players</button>
+  </div>
 </form>
