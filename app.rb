@@ -32,7 +32,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game.attack(@game.defending_player)
     @game.switch_turns
-    erb :play, :layout => :attack
+    redirect '/play'
   end
 
 end

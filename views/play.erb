@@ -1,15 +1,22 @@
   <h2><%= @game.player1.name %> vs <%= @game.player2.name %></h2>
     <p><%= @game.player1.name %></p>
-    <%= @game.player1.hp %> / 60 HP
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="<%= @game.player1.hp %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @game.player1.hp %>%;">
+      </div>
+    </div>
     <% if @game.player1.hp == 0 %>
-    <p>Gameover, <%= @game.player1.name %> lost the battle</p>
+    <div class="alert alert-danger" role="alert">GAME OVER. <%= @game.player1.name%> lost the battle</div>
     <% end %>
     <p><%= @game.player2.name %></p>
-    <%= @game.player2.hp %> / 60 HP
     <% if @game.player2.hp == 0 %>
-    <p>Gameover, <%= @game.player2.name %> lost the battle</p>
+    <div class="alert alert-danger" role="alert">GAME OVER. <%= @game.player2.name%> lost the battle</div>
     <% end %>
     <% if @game.active? %>
     <p><%= @game.attacking_player.name %>'s Turn</p>
+    <p><%= @game.attacking_player.name %> has attacked <%= @game.defending_player.name %></p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="<%= @game.player1.hp %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @game.player2.hp %>%;">
+      </div>
+    </div>
     <a href="/attack" class="btn btn-danger btn-lg" role="button">Attack</a>
     <% end %>
